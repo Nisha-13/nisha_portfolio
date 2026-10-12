@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nisha Portfolio</title>
+<meta name="description" content="Portfolio of Nisha, a web developer and Computer Science graduate from Faisalabad, Pakistan. Projects, experience, skills and contact details.">
+<meta name="author" content="Nisha">
+<meta name="theme-color" content="#17365d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nisha Portfolio">
+<meta property="og:description" content="Web developer and Computer Science graduate from Faisalabad, Pakistan. See my projects, experience and skills.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Nisha, back to top">nisha<span>.</span>dev</a>
+    <div class="navpanel" id="navpanel">
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <a class="btn primary talk" href="#contact">Let's talk</a>
+    <button class="switch" id="theme" type="button" role="switch" aria-checked="false" aria-label="Dark theme">
+      <svg class="si sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="si moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <span class="thumb" aria-hidden="true"></span>
+    </button>
+    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="navpanel" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Web developer</p>
+        <h1 class="name" aria-label="Nisha"><span class="ch" style="--i:0" aria-hidden="true">N</span><span class="ch" style="--i:1" aria-hidden="true">i</span><span class="ch" style="--i:2" aria-hidden="true">s</span><span class="ch" style="--i:3" aria-hidden="true">h</span><span class="ch" style="--i:4" aria-hidden="true">a</span></h1>
+        <p class="role">I build <span class="typed" id="typed">web applications</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lede">Computer Science graduate from Faisalabad. I work on the whole application, from the screen people use to the database behind it.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="side">
+        <div class="photo">
+          <div class="ring" aria-hidden="true"></div>
+          <img src="images/nisha.jpg" alt="Portrait of Nisha" width="480" height="480">
+        </div>
+        <div class="win-wrap" id="winWrap">
+          <div class="win-anim" id="winAnim">
+            <div class="win" id="win">
+              <div class="win-bar">
+                <div class="dots">
+                  <button class="dot r" id="dClose" type="button" aria-label="Close window"></button>
+                  <button class="dot y" id="dMin" type="button" aria-label="Minimize window" aria-pressed="false"></button>
+                  <button class="dot g" id="dMax" type="button" aria-label="Maximize window" aria-pressed="false"></button>
+                </div>
+                <button class="run" id="run" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>Run</button>
+                <div class="tabs" role="tablist" aria-label="Files in this window">
+                  <button class="tab" role="tab" data-f="nisha" aria-selected="true" aria-controls="codeBox" type="button">nisha.js</button>
+                  <button class="tab" role="tab" data-f="skills" aria-selected="false" aria-controls="codeBox" tabindex="-1" type="button">skills.js</button>
+                  <button class="tab" role="tab" data-f="contact" aria-selected="false" aria-controls="codeBox" tabindex="-1" type="button">contact.js</button>
+                </div>
+              </div>
+              <div class="win-body">
+                <div class="win-inner">
+<pre class="code" id="codeBox" role="tabpanel" aria-label="File contents"><code id="codeEl"></code></pre>
+                  <div class="term" id="term" hidden>
+                    <div class="term-bar"><span>Terminal</span><button class="clear" id="clear" type="button">Clear</button></div>
+                    <pre id="termOut" aria-live="polite"></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="reopen" id="reopen" type="button" hidden>Reopen nisha.js</button>
+        </div>
+      </div>
+    </div>
+    <div class="strip" aria-hidden="true">
+      <div class="strip-track">
+        <ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li><li>jQuery</li><li>PHP</li><li>Laravel</li><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>MongoDB</li><li>Responsive design</li></ul>
+        <ul aria-hidden="true"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li><li>jQuery</li><li>PHP</li><li>Laravel</li><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>MongoDB</li><li>Responsive design</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">About</p>
+        <h2>Interfaces on top, data underneath, and the logic that joins them.</h2>
+      </div>
+      <div class="about">
+        <div class="rv">
+          <p>I am a Computer Science graduate of <strong>Government College University Faisalabad</strong>. I build complete web applications: the interface people see, the server code behind it, and the database that stores everything.</p>
+          <p>Across three internships I worked on web projects, fixed bugs, tested features and took applications through deployment next to senior developers. My own projects include a car dealership site, an online store, a hospital system, a services marketplace and a task manager.</p>
+          <p>I also want to keep learning the theory behind the software I write, and I am interested in research and graduate-level study.</p>
+          <p class="interests-label">Research interests</p>
+          <ul class="interests">
+            <li class="chip">Artificial Intelligence</li>
+            <li class="chip">Machine Learning</li>
+            <li class="chip">Web Technologies</li>
+            <li class="chip">Software Engineering</li>
+            <li class="chip">Database Systems</li>
+            <li class="chip">Cloud Computing</li>
+            <li class="chip">Data Science</li>
+            <li class="chip">Applied Computing</li>
+          </ul>
+        </div>
+        <div class="facts rv">
+          <div class="fact"><div class="num" data-to="14" data-dec="0">14</div><p class="lbl">months of internship experience</p></div>
+          <div class="fact"><div class="num" data-to="3" data-dec="0">3</div><p class="lbl">companies worked with</p></div>
+          <div class="fact"><div class="num" data-to="5" data-dec="0">5</div><p class="lbl">full web projects built</p></div>
+          <div class="fact"><div class="num" data-to="3.44" data-dec="2">3.44<small>/ 4.0</small></div><p class="lbl">CGPA in BSCS</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Skills</p>
+        <h2>The stack I work in, layer by layer.</h2>
+      </div>
+      <div class="layers rv">
+        <div class="layer">
+          <h3>Interface<span class="tag">What people see</span></h3>
+          <ul class="chips">
+            <li class="tool">HTML5</li><li class="tool">CSS3</li><li class="tool">JavaScript</li><li class="tool">Bootstrap</li><li class="tool">jQuery</li><li class="tool">Responsive design</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <h3>Logic<span class="tag">What the server does</span></h3>
+          <ul class="chips">
+            <li class="tool">PHP</li><li class="tool">Laravel</li><li class="tool">Node.js</li><li class="tool">Express.js</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <h3>Data<span class="tag">What gets stored</span></h3>
+          <ul class="chips">
+            <li class="tool">MySQL</li><li class="tool">MongoDB</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <h3>Environment<span class="tag">Where I build</span></h3>
+          <ul class="chips">
+            <li class="tool">XAMPP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Projects</p>
+        <h2>Five web applications, built end to end.</h2>
+        <p class="sub">Each project opens the real site in a new tab.</p>
+      </div>
+      <div class="projects">
+
+        <article class="proj rv">
+          <a class="shot" href="http://13.63.98.57/" target="_blank" rel="noopener" aria-label="Open AutoLuxe in a new tab">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">13.63.98.57</span></div>
+            <div class="view"><img src="images/autoluxe.jpg" alt="AutoLuxe home page with a featured Land Rover slider and a vehicle search bar"></div>
+          </a>
+          <div class="proj-body">
+            <span class="kind">Car dealership platform</span>
+            <h3>AutoLuxe</h3>
+            <p>A platform for managing, listing and selling cars. Visitors browse a featured vehicle slider and the full inventory, search by model, fuel type and price, and compare vehicles. Signed-in users get a dashboard.</p>
+            <ul class="tags"><li>Inventory search</li><li>Compare vehicles</li><li>Dashboard</li><li>Login</li></ul>
+            <a class="btn primary" href="http://13.63.98.57/" target="_blank" rel="noopener">Visit site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <a class="shot" href="https://healthpulse.pntr.dev/" target="_blank" rel="noopener" aria-label="Open HealthPulse in a new tab">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">healthpulse.pntr.dev</span></div>
+            <div class="view"><img src="images/healthpulse.jpg" alt="HealthPulse hospital home page with a quick OPD appointment form"></div>
+          </a>
+          <div class="proj-body">
+            <span class="kind">Hospital management system</span>
+            <h3>HealthPulse</h3>
+            <p>A hospital system for patients, doctors, appointments and daily operations. Patients pick a department and date to book an OPD slot, then follow their turn on a queue board. Doctors, departments, services and events each have their own pages.</p>
+            <ul class="tags"><li>Appointment booking</li><li>Doctors and departments</li><li>OPD queue board</li><li>Portal login</li></ul>
+            <a class="btn primary" href="https://healthpulse.pntr.dev/" target="_blank" rel="noopener">Visit site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <a class="shot" href="http://16.170.92.251/" target="_blank" rel="noopener" aria-label="Open BeautyVault in a new tab">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">16.170.92.251</span></div>
+            <div class="view"><img src="images/beautyvault.jpg" alt="BeautyVault cosmetics store home page with a skin diagnostic and shade match buttons"></div>
+          </a>
+          <div class="proj-body">
+            <span class="kind">Cosmetics store</span>
+            <h3>BeautyVault</h3>
+            <p>An online store for skincare and makeup. Customers browse the catalog, use a shade matcher and a skin diagnostic to find suitable products, and manage a cart, a wishlist and order tracking.</p>
+            <ul class="tags"><li>Product catalog</li><li>Shade matcher</li><li>Skin diagnostic</li><li>Cart and orders</li></ul>
+            <a class="btn primary" href="http://16.170.92.251/" target="_blank" rel="noopener">Visit site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <a class="shot" href="http://16.192.146.171/" target="_blank" rel="noopener" aria-label="Open Servora in a new tab">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">16.192.146.171</span></div>
+            <div class="view"><img src="images/servora.jpg" alt="Servora home page with a service search bar and an admin navigation menu"></div>
+          </a>
+          <div class="proj-body">
+            <span class="kind">On-demand services platform</span>
+            <h3>Servora</h3>
+            <p>A platform that connects customers with service providers for jobs like AC repair, detailing and home renovation. Customers search for a service and book it, with itemized invoices and cash on delivery. Admins manage users, categories, services, bookings, payments and logs.</p>
+            <ul class="tags"><li>Service search</li><li>Bookings</li><li>Payments</li><li>Admin panel</li></ul>
+            <a class="btn primary" href="http://16.192.146.171/" target="_blank" rel="noopener">Visit site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="proj rv">
+          <a class="shot" href="https://tms.wuaze.com/" target="_blank" rel="noopener" aria-label="Open Task Management System in a new tab">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">tms.wuaze.com</span></div>
+            <div class="view"><img src="images/task-management.jpg" alt="Task Management System admin dashboard with user, task and leave totals and task progress charts"></div>
+          </a>
+          <div class="proj-body">
+            <span class="kind">Admin dashboard</span>
+            <h3>Task Management System</h3>
+            <p>A CRUD-based system for creating, tracking and managing tasks, backed by a relational database. The admin dashboard shows totals for users, tasks and leaves, plus task progress charts. Admins add users and tasks, review leave applications and read progress reports.</p>
+            <ul class="tags"><li>CRUD</li><li>Relational database</li><li>Leave applications</li><li>Progress reports</li></ul>
+            <a class="btn primary" href="https://tms.wuaze.com/" target="_blank" rel="noopener">Visit site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Experience</p>
+        <h2>Three internships on web projects.</h2>
+      </div>
+      <div class="tl">
+        <article class="job rv">
+          <div class="job-head"><h3>DS Technologies (Pvt.) Limited</h3><span class="dur">5 months</span></div>
+          <p class="role-line">Web Development Intern</p>
+          <p class="via">Internship facilitated through CMIT (Career Mentoring &amp; Internship Training)</p>
+          <ul>
+            <li>Worked as a web developer, handling the frontend and backend of web projects.</li>
+            <li>Built responsive interfaces and connected them to backend logic and databases.</li>
+            <li>Gained hands-on experience with end-to-end web development, debugging and deployment.</li>
+          </ul>
+        </article>
+        <article class="job rv">
+          <div class="job-head"><h3>SofticEra, Institute &amp; Software House</h3><span class="dur">5 months</span></div>
+          <p class="role-line">Web Development Intern</p>
+          <ul>
+            <li>Built dynamic web applications using PHP, MySQL, Bootstrap and jQuery.</li>
+            <li>Helped debug, test and optimize web applications.</li>
+          </ul>
+        </article>
+        <article class="job rv">
+          <div class="job-head"><h3>Netlink Solutions</h3><span class="dur">4 months</span></div>
+          <p class="role-line">Web Development Intern</p>
+          <ul>
+            <li>Strengthened hands-on skills in PHP, MySQL and JavaScript development.</li>
+            <li>Collaborated with senior developers on real-time client projects.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="education">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Education</p>
+        <h2>A Computer Science path from matriculation to BSCS.</h2>
+      </div>
+      <div class="edu rv">
+        <div class="edu-row">
+          <p class="yrs">2021 to 2025</p>
+          <div>
+            <h3>Bachelor of Science in Computer Science (BSCS)</h3>
+            <p class="where">Government College University Faisalabad (GCUF), Pakistan</p>
+            <ul class="course" aria-label="Relevant coursework">
+              <li class="chip">Data Structures and Algorithms</li>
+              <li class="chip">Object-Oriented Programming</li>
+              <li class="chip">Database Systems</li>
+              <li class="chip">Operating Systems</li>
+              <li class="chip">Software Engineering</li>
+              <li class="chip">Web Engineering</li>
+              <li class="chip">Computer Networks</li>
+              <li class="chip">Artificial Intelligence</li>
+            </ul>
+          </div>
+          <p class="score">3.44<small>CGPA / 4.0</small></p>
+        </div>
+        <div class="edu-row">
+          <p class="yrs">2019 to 2021</p>
+          <div>
+            <h3>Intermediate in Computer Science (ICS)</h3>
+            <p class="where">Govt. College for Women, Karkhana Bazar, Faisalabad, Pakistan</p>
+          </div>
+          <p class="score">91.27%<small>1004 / 1100</small></p>
+        </div>
+        <div class="edu-row">
+          <p class="yrs">2017 to 2019</p>
+          <div>
+            <h3>Matriculation (Science)</h3>
+            <p class="where">Government M.C. Girls High School, Hajiabad, Faisalabad, Pakistan</p>
+          </div>
+          <p class="score">81.18%<small>893 / 1100</small></p>
+        </div>
+      </div>
+      <div class="langs rv">
+        <h3>Languages</h3>
+        <p><b>Urdu</b><span>Native</span></p>
+        <p><b>English</b><span>Proficient</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <p class="eyebrow">Contact</p>
+        <h2 class="big">Have a project or an opening? <em>Let's talk.</em></h2>
+        <p class="contact-note">I am based in Faisalabad, Pakistan. Email is the quickest way to reach me. References are available on request.</p>
+      </div>
+      <div class="rows rv">
+        <div class="crow"><span class="k">Email</span><a class="v" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nisha.webdesigner13@gmail.com&amp;su=Hello%20Nisha" target="_blank" rel="noopener">nisha.webdesigner13@gmail.com</a><button class="copy" type="button" data-copy="nisha.webdesigner13@gmail.com">Copy</button></div>
+        <div class="crow"><span class="k">Phone</span><span class="v">+92 3433050994</span><button class="copy" type="button" data-copy="+92 3433050994">Copy</button></div>
+        <div class="crow"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/nisha-ghaffar-21767033b/" target="_blank" rel="noopener">linkedin.com/in/nisha-ghaffar</a><span></span></div>
+        <div class="crow"><span class="k">Location</span><span class="v">Millat Town, Faisalabad, Pakistan</span><span></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Nisha. Built by hand with HTML, CSS and JavaScript.</span>
+    <a href="#home">Back to top</a>
+  </div>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
